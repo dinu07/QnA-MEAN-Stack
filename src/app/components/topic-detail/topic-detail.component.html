@@ -1,0 +1,25 @@
+<div class="topic-detail" *ngIf="topic as t">
+    <div class="alert alert-danger error-msg" role="alert" *ngIf="error">
+        Problem serving your request. Please try later.
+    </div>
+    <div class="card post-question-card bg-light">
+        <h5 class="card-header">
+          Post your question in {{t.name}}
+        </h5>
+        <div class="card-body">
+          <p class="card-title">Write your question in detail...</p>
+          <p><textarea id="question-field" rows="4" #questionField></textarea></p>
+
+          <input id="question-button" class="btn btn-primary btn-sm" type="button" value="Post" (click)="postNewQuestion(questionField.value);questionField.value='';"/>
+          <input class="btn btn-secondary btn-sm" type="reset" value="Cancel" (click)="questionField.value='';"/>
+        </div>
+    </div>
+
+    <div class="all-questions" *ngIf="questions">
+      <div class="question-wrapper-card" *ngFor="let question of questions; let questionIdx = index;">
+          <app-question-summary (deleteQuestionRequest)="deleteQuestion($event)" [question]="question" [questionIdx]="questions.length - questionIdx"></app-question-summary>
+      </div>
+    </div>
+</div>
+
+

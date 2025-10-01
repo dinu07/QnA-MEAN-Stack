@@ -1,0 +1,15 @@
+.topic-detail {
+    padding: 1rem;
+}
+#question-field {
+    width: 100%
+}
+.all-questions {
+    padding: 1rem 0;
+}
+.question-wrapper-card{
+    padding-bottom: 1rem;
+}
+#question-button{
+    margin-right: 0.5rem;
+}

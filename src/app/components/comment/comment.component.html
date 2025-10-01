@@ -1,0 +1,13 @@
+<div class="card comment-card" *ngIf="comment as c">
+  <div class="card-body">
+
+    <p class="card-text comment-description">
+      {{c.description}}
+    </p>
+    <p class="card-text">
+      <small class="text-muted comment-date">Posted on {{c.createdDate | date: 'medium'}}</small>
+    </p>
+  
+    <button type="button" class="btn btn-outline-danger btn-sm delete-comment" (click)="deleteComment()">Delete comment</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card question-card" *ngIf="question as q">
+  <div class="card-body">
+      <p class="card-text">
+        <span class="badge badge-pill badge-secondary question-index"> Question {{questionIdx}}</span>
+        <small class="text-muted question-date">Posted on {{q.createdDate | date: 'medium'}}</small>
+      </p>
+      <p class="card-text question-description">
+        {{q.description}}
+      </p>
+
+      <button type="button" class="btn btn-outline-danger btn-sm delete-question" (click)="deleteQuestion()">Delete question</button>
+      <button type="button" routerLink="/question-details/{{q.id}}" class="btn btn-outline-primary btn-sm view-comments">View comments</button>
+  </div>
+</div>

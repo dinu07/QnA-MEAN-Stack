@@ -1,0 +1,20 @@
+.comment-wrapper {
+  border-bottom: 1px solid rgba(0,0,0,.125)
+}
+
+.post-comment-card {
+  border: none;
+}
+
+textarea {
+  width:100%;
+}
+
+#comment-button {
+  margin-right: 0.5rem;
+}
+
+.total-comments {
+  float: right;
+  padding-right: 2rem
+}

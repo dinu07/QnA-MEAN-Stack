@@ -1,0 +1,30 @@
+<div class="question-detail" *ngIf="question as q">
+  <div class="alert alert-danger error-msg" role="alert" *ngIf="error">
+      Problem serving your request. Please try later.
+  </div>
+  <div class="">
+      <div class="card-body">
+        <p class="card-text">{{q.description}}</p>
+        <p>
+          <small class="text-muted question-date">Posted on {{q.createdDate | date: 'medium'}}</small>
+          <small class="text-muted total-comments" *ngIf="comments">{{comments.length}} Comments</small>
+        </p>
+        
+      
+          <div class="post-comment-card card">
+            <div class="card-body">
+              <p><textarea placeholder="Write your comments here......." id="comment-field" rows="4" #commentField></textarea></p>
+              
+              <input id="comment-button" class="btn btn-primary btn-sm" type="button" value="Post" (click)="postNewComment(commentField.value);commentField.value='';"/>
+              <input class="btn btn-secondary btn-sm" type="reset" value="Cancel" (click)="commentField.value='';"/>
+            </div>
+          </div>
+
+          <div class="all-comments" *ngIf="comments">
+              <div class="comment-wrapper" *ngFor="let comment of comments">
+                  <app-comment (deleteCommentRequest)="deleteComment($event)" [comment]="comment"></app-comment>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

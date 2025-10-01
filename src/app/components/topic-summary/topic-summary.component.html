@@ -1,0 +1,15 @@
+<div class="card topic-card bg-light" *ngIf="topic as t">
+    <div class="card-body">
+      <h5 class="card-title topic-name">
+          {{t.name}}
+      </h5>
+      <p class="card-text topic-description">
+        {{t.description}}
+      </p>
+  
+      <a routerLink="/topic-details/{{t.id}}" class="btn btn-primary view-topic-details">
+        See all questions
+        <span class="badge badge-light total-questions">{{totalQuestionsPosted}}</span>
+      </a>
+    </div>
+  </div>  
